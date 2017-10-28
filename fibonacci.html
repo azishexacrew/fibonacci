@@ -1,19 +1,19 @@
 <html>
 <body>
 <script type="text/javascript">
+var first = 0;
+var second = 1;
+var sum = 0;
 var n1=0,n2=1,sum,limit=4000000;
 document.write("<p><strong>Fibonacci Results: </strong></p>");
-while ((n1+n2)<limit)
-{
-if(sum!=undefined)
-if (sum % 2 === 0) {
-	evensum=sum;
-	document.write(evensum);
-	document.write("<br/>");
-}
-sum=n1+n2;
-n1=n2;
-n2=sum;
+for(var current=first+second; current < 4000000; current = first+second){
+    if(current%2 === 0){
+        sum+=current;
+        document.write(sum);
+		document.write("<br/>");
+    }
+    first = second;
+    second = current;
 }
 </script>
 </body>
